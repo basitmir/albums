@@ -19,7 +19,9 @@ class AppState extends State<App> {
 
   void fetchImage() async{
     counter++;
-    var response= await get('https://jsonplaceholder.typicode.com/photos/$counter');
+    var response= await get('http://www.splashbase.co/api/v1/images/random');
+   // http://www.splashbase.co/api/v1/images/1
+   // https://jsonplaceholder.typicode.com/photos/$counter
     var imageModel=ImageModel.fromJson(json.decode(response.body));
     setState(() {
        images.add(imageModel);
